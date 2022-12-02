@@ -25,71 +25,32 @@ fn part_one() {
             'X' => 1,
             'Y' => 2,
             'Z' => 3,
-            _ => 0,
+            _ => unimplemented!(),
         };
 
         match p1 {
             'A' => {
-                // rock
-                match p2 {
-                    // rock
-                    'X' => {
-                        // draw
-                        score += 3;
-                    }
-                    // paper
-                    'Y' => {
-                        // win
-                        score += 6;
-                    }
-                    // scissors
-                    'Z' => {
-                        // lose
-                        score += 0;
-                    }
-                    _ => {}
+                score += match p2 {
+                    'X' => 3,
+                    'Y' => 6,
+                    'Z' => 0,
+                    _ => unimplemented!(),
                 }
             }
             'B' => {
-                // paper
-                match p2 {
-                    // rock
-                    'X' => {
-                        // lose
-                        score += 0;
-                    }
-                    // paper
-                    'Y' => {
-                        // draw
-                        score += 3;
-                    }
-                    // scissors
-                    'Z' => {
-                        // win
-                        score += 6;
-                    }
-                    _ => {}
+                score += match p2 {
+                    'X' => 0,
+                    'Y' => 3,
+                    'Z' => 6,
+                    _ => unimplemented!(),
                 }
             }
             'C' => {
-                // scissors
-                match p2 {
-                    // rock
-                    'X' => {
-                        // win
-                        score += 6;
-                    }
-                    // paper
-                    'Y' => {
-                        // lose
-                        score += 0;
-                    }
-                    // scissors
-                    'Z' => {
-                        // draw
-                        score += 3;
-                    }
-                    _ => {}
+                score += match p2 {
+                    'X' => 6,
+                    'Y' => 0,
+                    'Z' => 3,
+                    _ => unimplemented!(),
                 }
             }
             _ => {}
